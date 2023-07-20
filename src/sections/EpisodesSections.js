@@ -1,29 +1,21 @@
-import React from 'react';
-import Character1Episodes from "../components/Character1Episodes";
-import SharedEpisodes from "../components/SharedEpisodes";
-import Character2Episodes from "../components/Character2Episodes";
+import React from 'react'
+import Character1Episodes from '../sections/Character1Episodes'
+import SharedEpisodes from './SharedEpisodes'
+import Character2Episodes from '../sections/Character2Episodes'
 
-const EpisodesSection = ({selectedCharacter1, selectedCharacter2}) => {
+const EpisodesSection = ({ selectedCharacter1, selectedCharacter2 }) => {
   return (
     <div className='episodes-container'>
+      <Character1Episodes selectedCharacter={selectedCharacter1} />
 
-        <div className='episode-section'>
-          <Character1Episodes selectedCharacter={selectedCharacter1} />
-        </div>
+      <SharedEpisodes
+        selectedCharacter1={selectedCharacter1}
+        selectedCharacter2={selectedCharacter2}
+      />
 
-        <div className='episode-section'>
-          <SharedEpisodes
-            selectedCharacter1={selectedCharacter1}
-            selectedCharacter2={selectedCharacter2}
-          />
-        </div>
-
-        <div className='episode-section'>
-          <Character2Episodes selectedCharacter={selectedCharacter2} />
-        </div>
-
-      </div>
+      <Character2Episodes selectedCharacter={selectedCharacter2} />
+    </div>
   )
-};
+}
 
-export default EpisodesSection;
+export default EpisodesSection

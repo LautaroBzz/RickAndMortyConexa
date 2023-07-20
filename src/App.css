@@ -1,4 +1,3 @@
-/* App.css */
 .app-container {
   display: flex;
   flex-direction: column;
@@ -34,7 +33,7 @@
 }
 
 .episode-section {
-  width: 33.33%; /* Each section occupies 33.33% of the width to create equal horizontal size */
+  width: 33.33%;
   padding: 20px;
   box-sizing: border-box;
   border: 1px solid #e0e0e0;
@@ -43,7 +42,7 @@
 }
 
 .character-card {
-  width: 48%; /* Adjust as needed to create space between the cards */
+  width: 48%;
   margin-bottom: 20px;
   cursor: pointer;
   background-color: #fff;

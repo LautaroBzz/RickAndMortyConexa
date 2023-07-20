@@ -9,17 +9,18 @@ const App = () => {
 
   return (
     <div className='app-container'>
+      
       <div className='characters-container'>
         <FullList
           handleSelectCharacter={(character) => setSelectedCharacter1(character)}
           characterTitle={'Character #1'}
         />
-
         <FullList
           handleSelectCharacter={(character) => setSelectedCharacter2(character)}
           characterTitle={'Character #2'}
         />
       </div>
+
       <EpisodesSection
         selectedCharacter1={selectedCharacter1}
         selectedCharacter2={selectedCharacter2}
