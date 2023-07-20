@@ -1,0 +1,32 @@
+.character-episodes-container {
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+}
+
+.character-episodes-container h2 {
+  margin-bottom: 10px;
+}
+
+.episode-list {
+  list-style: none;
+  padding: 0;
+}
+
+.episode-item {
+  margin-bottom: 20px;
+}
+
+.episode-info {
+  margin-bottom: 5px;
+}
+
+.character-selected {
+  color: blue;
+}
+
+.characters-shared {
+  color: blueviolet
+}
