@@ -1,5 +1,5 @@
 import React from 'react';
-import { useRickAndMortyContext } from '../context';
+import { useRickAndMortyContext } from '../hooks/useRickAndMortyContext';
 import EpisodeInfo from "../components/EpisodeInfo"
 import '../styles/CharacterEpisodes.css';
 

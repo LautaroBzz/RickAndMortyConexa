@@ -2,7 +2,6 @@ import React, {
   useState,
   useEffect,
   createContext,
-  useContext,
   useCallback,
   useMemo,
 } from 'react';
@@ -79,14 +78,4 @@ const RickAndMortyProvider = ({ children }) => {
   )
 };
 
-const useRickAndMortyContext = () => {
-  const context = useContext(RickAndMortyContext)
-  if (!context) {
-    throw new Error(
-      'useRickAndMortyContext must be used within a RickAndMortyProvider'
-    )
-  };
-  return context;
-};
-
-export { RickAndMortyProvider, useRickAndMortyContext };
+export { RickAndMortyProvider, RickAndMortyContext };
