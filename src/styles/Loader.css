@@ -1,0 +1,33 @@
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.loader-face {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 10px solid #f7e018;
+  position: absolute;
+}
+
+.loader-face-1 {
+  animation: spin 2s linear infinite;
+}
+
+.loader-face-2 {
+  animation: spin 2s linear infinite reverse;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+    border-color: #f7e018;
+  }
+  to {
+    transform: rotate(360deg);
+    border-color: #51c4e7;
+  }
+}

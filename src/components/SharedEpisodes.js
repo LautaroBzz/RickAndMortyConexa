@@ -1,26 +1,20 @@
-import React from 'react'
-import { useRickAndMortyContext } from '../context'
-import './CharacterEpisodes.css'
+import React from 'react';
+import { useRickAndMortyContext } from '../context';
+import '../styles/CharacterEpisodes.css';
 
 const SharedEpisodes = ({ selectedCharacter1, selectedCharacter2 }) => {
-  const { episodes, allDataLoaded } = useRickAndMortyContext()
+  const { episodes, allDataLoaded } = useRickAndMortyContext();
 
-  if (!allDataLoaded) {
-    return <div>Loading episodes...</div>
-  }
-
-  console.log(selectedCharacter1)
+  if (!allDataLoaded)  return <div>Loading episodes...</div>;
 
   const episodesCharacter1 = selectedCharacter1?.episode || [];
   const episodesCharacter2 = selectedCharacter2?.episode || [];
 
   const episodesSharedArray = episodesCharacter1.filter((episode1) =>
-    episodesCharacter2.includes(episode1)
-  );
+    episodesCharacter2.includes(episode1));
 
   const episodesShared = episodes?.filter((episode) =>
-    episodesSharedArray?.includes(episode.url)
-  )
+    episodesSharedArray?.includes(episode.url));
 
   return (
     <>
@@ -48,11 +42,11 @@ const SharedEpisodes = ({ selectedCharacter1, selectedCharacter2 }) => {
             ))}
           </ul>
         ) : (
-          <p>No shared episodes for these characters.</p>
+          <p>"Not a single shared episode, Morty. Jeez!"</p>
         )}
       </div>
     </>
   )
-}
+};
 
-export default SharedEpisodes
+export default SharedEpisodes;

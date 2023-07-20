@@ -1,13 +1,11 @@
 import React from 'react';
 import { useRickAndMortyContext } from '../context';
-import './CharacterList.css';
+import '../styles/CharacterList.css';
 
 const CharacterList = ({ onSelectCharacter }) => {
   const { characters, allDataLoaded } = useRickAndMortyContext();
 
-  if (!allDataLoaded) {
-    return <div>Loading...</div>;
-  }
+  if (!allDataLoaded) return <div>Loading...</div>;
 
   const handleCharacterClick = (character) => {
     onSelectCharacter(character);
@@ -21,9 +19,15 @@ const CharacterList = ({ onSelectCharacter }) => {
           className="character-card"
           onClick={() => handleCharacterClick(character)}
         >
-          <img src={character.image} alt={character.name} className="character-image" />
+          <img 
+            src={character.image} 
+            alt={character.name} 
+            className="character-image" 
+          />
           <div className="character-info">
-            <h3 className="character-name">{character.name}</h3>
+            <h3 className="character-name">
+              {character.name}
+            </h3>
             <p className="character-species">
               {character.species}
             </p>

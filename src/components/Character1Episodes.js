@@ -1,17 +1,16 @@
-import React from 'react'
-import { useRickAndMortyContext } from '../context'
-import './CharacterEpisodes.css'
+import React from 'react';
+import { useRickAndMortyContext } from '../context';
+import '../styles/CharacterEpisodes.css';
 
 const Character1Episodes = ( selectedCharacter1 ) => {
-  const { episodes, allDataLoaded } = useRickAndMortyContext()
+  const { episodes, allDataLoaded } = useRickAndMortyContext();
 
   if (!allDataLoaded) {
     return <div>Loading episodes...</div>
-  }
+  };
 
   const episodesForCharacter = episodes?.filter((episode) =>
-    selectedCharacter1?.selectedCharacter?.episode?.includes(episode.url)
-  )
+    selectedCharacter1?.selectedCharacter?.episode?.includes(episode.url));
 
   return (
     <>
@@ -35,11 +34,11 @@ const Character1Episodes = ( selectedCharacter1 ) => {
             ))}
           </ul>
         ) : (
-          <p>No episodes found for this character.</p>
+          <p>"No episodes, Morty! We're in a TV-less reality here."</p>
         )}
       </div>
     </>
   )
-}
+};
 
-export default Character1Episodes
+export default Character1Episodes;

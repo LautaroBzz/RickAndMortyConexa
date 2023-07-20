@@ -6,6 +6,7 @@ import React, {
   useCallback,
   useMemo,
 } from 'react'
+import Loader from "./components/Loader"
 
 const RickAndMortyContext = createContext()
 
@@ -68,7 +69,7 @@ const RickAndMortyProvider = ({ children }) => {
 
   return (
     <RickAndMortyContext.Provider value={{ ...allData, allDataLoaded }}>
-      {allDataLoaded ? children : <div>Loading...</div>}
+      {allDataLoaded ? children : <Loader />}
     </RickAndMortyContext.Provider>
   )
 }
