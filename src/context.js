@@ -6,6 +6,7 @@ import React, {
   useCallback,
   useMemo,
 } from 'react';
+import axios from 'axios';
 import Loader from "./components/Loader";
 
 const RickAndMortyContext = createContext();
@@ -23,11 +24,11 @@ const RickAndMortyProvider = ({ children }) => {
     const allData = [];
     let nextUrl = `${baseUrl}/${resource}`;
     while (nextUrl) {
-      const response = await fetch(nextUrl)
-      const data = await response.json()
-      allData.push(...data.results)
-      nextUrl = data.info.next
-    };
+      const response = await axios.get(nextUrl);
+      const data = response.data;
+      allData.push(...data.results);
+      nextUrl = data.info.next;
+    }
     return allData;
   }, []);
 
