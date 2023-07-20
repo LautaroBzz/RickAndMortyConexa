@@ -7,6 +7,8 @@ const App = () => {
   const [selectedCharacter1, setSelectedCharacter1] = useState(null);
   const [selectedCharacter2, setSelectedCharacter2] = useState(null);
 
+  const areBothCharactersSelected = selectedCharacter1 && selectedCharacter2;
+
   return (
     <div className='app-container'>
       
@@ -21,10 +23,12 @@ const App = () => {
         />
       </div>
 
-      <EpisodesSection
-        selectedCharacter1={selectedCharacter1}
-        selectedCharacter2={selectedCharacter2}
-      />
+      {areBothCharactersSelected &&
+        <EpisodesSection
+          selectedCharacter1={selectedCharacter1}
+          selectedCharacter2={selectedCharacter2}
+        />
+      }
     </div>
   )
 };
