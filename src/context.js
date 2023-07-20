@@ -40,12 +40,16 @@ const RickAndMortyProvider = ({ children }) => {
   useEffect(() => {
     const fetchAllData = async () => {
       try {
-        const dataPromises = Object.values(resources).map((resource) =>
-          fetchData(resource)
+        const dataPromises = Object.values(resources).map(
+          (resource) => fetchData(resource)
         );
-        const [charactersData, locationsData, episodesData] = await Promise.all(
-          dataPromises
-        );
+
+        const [
+          charactersData, 
+          locationsData, 
+          episodesData
+        ] = await Promise.all(dataPromises);
+  
         setAllData({
           characters: charactersData,
           locations: locationsData,
@@ -55,6 +59,7 @@ const RickAndMortyProvider = ({ children }) => {
         console.error('Error fetching data:', error)
       }
     };
+
     fetchAllData();
   }, [resources, fetchData]);
 
@@ -64,7 +69,10 @@ const RickAndMortyProvider = ({ children }) => {
     allData.episodes.length > 0;
 
   return (
-    <RickAndMortyContext.Provider value={{ ...allData, allDataLoaded }}>
+    <RickAndMortyContext.Provider value={{ 
+      ...allData, 
+      allDataLoaded 
+    }}>
       {allDataLoaded ? children : <Loader />}
     </RickAndMortyContext.Provider>
   )
