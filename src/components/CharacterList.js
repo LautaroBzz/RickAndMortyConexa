@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useRickAndMortyContext } from '../hooks/useRickAndMortyContext';
 import '../styles/CharacterList.css';
 
 const CharacterList = ({ onSelectCharacter }) => {
   const { characters, allDataLoaded } = useRickAndMortyContext();
+  const [selectedCharacter, setSelectedCharacter] = useState(null);
 
   if (!allDataLoaded) return <div>Loading...</div>;
 
   const handleCharacterClick = (character) => {
     onSelectCharacter(character);
+    setSelectedCharacter(character);
   };
 
   return (
@@ -16,7 +18,7 @@ const CharacterList = ({ onSelectCharacter }) => {
       {characters.map((character) => (
         <div
           key={character.id}
-          className="character-card"
+          className={`character-card ${selectedCharacter?.id === character.id ? 'selected' : ''}`}
           onClick={() => handleCharacterClick(character)}
         >
           <img 
