@@ -3,7 +3,7 @@ import { useRickAndMortyContext } from '../hooks/useRickAndMortyContext';
 import '../styles/CharacterEpisodes.css';
 import EpisodeInfo from "../components/EpisodeInfo";
 
-const SharedEpisodes = ({ selectedCharacter1, selectedCharacter2 }) => {
+const SharedEpisodes = ({ selectedCharacter1, selectedCharacter2, title }) => {
   const { episodes, allDataLoaded } = useRickAndMortyContext();
 
   if (!allDataLoaded) return <div>Loading episodes...</div>;
@@ -19,7 +19,7 @@ const SharedEpisodes = ({ selectedCharacter1, selectedCharacter2 }) => {
 
   return (
     <div className='episode-section'>
-      <h3>Character #1 & #2 - Shared Episodes</h3>
+      <h3>{title}</h3>
 
       {selectedCharacter1 && selectedCharacter2 && (
         <h4 className='characters-shared'>
@@ -29,7 +29,7 @@ const SharedEpisodes = ({ selectedCharacter1, selectedCharacter2 }) => {
 
       <EpisodeInfo 
         episodes={episodesSharedArray}
-        noResultText={"Not a single shared episode, Morty. Jeez!"}
+        noResultText={"Geez, Rick! No shared episodes for this two, you know?"}
       />
     </div>
   )

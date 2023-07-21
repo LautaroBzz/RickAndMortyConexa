@@ -9,9 +9,7 @@ const App = () => {
   const [selectedCharacter2, setSelectedCharacter2] = useState(null);
   const [showWelcomeModal, setShowWelcomeModal] = useState(true);
 
-  const handleModalClose = () => {
-    setShowWelcomeModal(false);
-  };
+  const handleModalClose = () => setShowWelcomeModal(false);
 
   const areBothCharactersSelected = selectedCharacter1 && selectedCharacter2;
 

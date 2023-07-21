@@ -2,7 +2,7 @@ import { useRickAndMortyContext } from '../hooks/useRickAndMortyContext';
 import EpisodeInfo from "../components/EpisodeInfo"
 import '../styles/CharacterEpisodes.css';
 
-const CharacterEpisodes = ({ selectedCharacter, title, noResultText }) => {
+const CharacterEpisodes = ({ selectedCharacter, title }) => {
   const { episodes, allDataLoaded } = useRickAndMortyContext();
 
   if (!allDataLoaded) return <div>Loading episodes...</div>;
@@ -16,7 +16,7 @@ const CharacterEpisodes = ({ selectedCharacter, title, noResultText }) => {
       <h4 className='character-selected'>{selectedCharacter?.name}</h4>
       <EpisodeInfo 
         episodes={episodesForCharacter}
-        noResultText={noResultText}
+        noResultText={"No episodes, Morty! We're in a TV-less reality here..."}
       />
     </div>
   )
