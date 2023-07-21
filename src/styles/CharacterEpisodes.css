@@ -1,9 +1,13 @@
+.episode-section {
+  background-color: rgb(230, 231, 255);
+}
+
 .character-episodes-container {
   margin: 20px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #f8f8f8;
+  background-color: rgb(198, 200, 230);
 }
 
 .character-episodes-container h2 {
@@ -24,13 +28,14 @@
 }
 
 .character-card.selected {
-  border: 2px solid rgb(184, 21, 21);
+  border: 3px solid rgb(124, 131, 236);
+  background-color: rgb(124, 131, 236);
 }
 
 .character-selected {
-  color: blue;
+  color: rgb(29, 39, 117);
 }
 
 .characters-shared {
-  color: blueviolet
+  color: rgb(71, 82, 233);
 }

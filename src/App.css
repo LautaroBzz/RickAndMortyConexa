@@ -34,7 +34,7 @@
 
 .episode-section {
   width: 33.33%;
-  padding: 20px;
+  padding-left: 15px;
   box-sizing: border-box;
   border: 1px solid #e0e0e0;
   height: 40vh;
@@ -82,13 +82,13 @@
 }
 
 .status-alive {
-  color: green;
+  color: rgb(0, 119, 0);
 }
 
 .status-dead {
-  color: red;
+  color: rgb(207, 0, 0);
 }
 
 .status-unknown {
-  color: grey;
+  color: rgb(26, 26, 26);
 }
