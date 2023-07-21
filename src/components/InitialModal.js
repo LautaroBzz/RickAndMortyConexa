@@ -13,7 +13,7 @@ const Modal = ({ onClose }) => {
           This app allows you to explore characters and episodes from Rick and Morty. 
         </p>
         <p>
-          Just select one of each list, and if there is something you don`t like, blame Jerry...
+          <strong>Just select one of each list, and if there is something you don`t like, blame Jerry...</strong>
         </p>
         <button className="close-button" onClick={onClose}>
           Get me outta here!

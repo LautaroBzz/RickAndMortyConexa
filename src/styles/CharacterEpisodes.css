@@ -2,8 +2,30 @@
   background-color: rgb(230, 231, 255);
 }
 
+.episode-section::-webkit-scrollbar {
+  width: 10px;
+}
+
+.episode-section::-webkit-scrollbar-thumb {
+  background-color: rgb(29, 39, 117);
+  border-radius: 10px;
+}
+
+.episode-section::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+.episode-section::-webkit-scrollbar-thumb:active {
+  background-color: rgb(29, 39, 117)333;
+}
+
+.episode-section::-webkit-scrollbar-track {
+  background-color: #ccc;   
+  border-radius: 5px;
+}
+
 .character-episodes-container {
-  margin: 20px;
+  margin-right: 20px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;

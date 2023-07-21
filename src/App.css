@@ -1,3 +1,7 @@
+body {
+  overflow: hidden;
+}
+
 .app-container {
   display: flex;
   flex-direction: column;
@@ -12,14 +16,43 @@
   width: 100%;
   max-width: 1200px;
   align-items: stretch;
-  padding-bottom: 35vh;
+  margin-bottom: 220px;
+}
+
+.character-list-container.reduced-height {
+  max-height: 53vh;
+  margin-top: 0px !important;
 }
 
 .character-list-container {
-  width: 50%;
-  padding: 50px;
-  padding-top: 20px !important;
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+  margin-top: 20px !important;
   box-sizing: border-box;
+  max-height: 95vh; 
+  overflow-y: auto;
+}
+
+.character-list-container::-webkit-scrollbar {
+  width: 10px;
+}
+
+.character-list-container::-webkit-scrollbar-thumb {
+  background-color: rgb(29, 39, 117);
+  border-radius: 10px;
+}
+
+.character-list-container::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+.character-list-container::-webkit-scrollbar-thumb:active {
+  background-color: rgb(29, 39, 117)333;
+}
+
+.character-list-container::-webkit-scrollbar-track {
+  background-color: #ccc;   
+  border-radius: 5px;
 }
 
 .episodes-container {
@@ -35,6 +68,7 @@
 .episode-section {
   width: 33.33%;
   padding-left: 15px;
+  padding-bottom: 15px;
   box-sizing: border-box;
   border: 1px solid #e0e0e0;
   height: 40vh;

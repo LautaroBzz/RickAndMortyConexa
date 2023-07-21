@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import EpisodesSection from './sections/EpisodesSections';
-import FullList from './sections/FullList';
+import CharacterListContainer from './containers/CharacterListContainer';
 import Modal from "./components/InitialModal";
 import './App.css';
 
@@ -20,13 +20,15 @@ const App = () => {
       {showWelcomeModal && <Modal onClose={handleModalClose} />}
       
       <div className='characters-container'>
-        <FullList
+        <CharacterListContainer
           handleSelectCharacter={(character) => setSelectedCharacter1(character)}
           characterTitle={'Character #1'}
+          areBothSelected={areBothCharactersSelected}
         />
-        <FullList
+        <CharacterListContainer
           handleSelectCharacter={(character) => setSelectedCharacter2(character)}
           characterTitle={'Character #2'}
+          areBothSelected={areBothCharactersSelected}
         />
       </div>
 
